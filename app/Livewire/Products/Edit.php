@@ -8,7 +8,12 @@ use Livewire\Component;
 class Edit extends Component
 {
     public $product;
-    public $name, $description, $price;
+
+    public $name;
+
+    public $description;
+
+    public $price;
 
     protected $rules = [
         'name' => 'required|string|max:255',

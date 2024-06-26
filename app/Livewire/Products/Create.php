@@ -8,6 +8,7 @@ use Livewire\Component;
 class Create extends Component
 {
     public $name;
+
     public $price;
 
     protected $rules = [
@@ -25,10 +26,10 @@ class Create extends Component
         ]);
 
         session()->flash('message', 'Product created successfully.');
-        
+
         $this->redirectRoute('products.index');
     }
-    
+
     public function render()
     {
         return view('livewire.products.create');
