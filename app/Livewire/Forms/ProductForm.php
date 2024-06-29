@@ -29,6 +29,8 @@ class ProductForm extends Form
         $this->product = $product;
         $this->name = $product->name;
         $this->price = $product->price;
+        $this->category_id = $product->category_id;
+        $this->brand_id = $product->brand_id;
     }
 
     public function store()
