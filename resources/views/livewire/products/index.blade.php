@@ -1,11 +1,11 @@
-<div>
+<div class="container my-4">
     @if (session()->has('message'))
         <div class="alert alert-success">
             {{ session('message') }}
         </div>
     @endif
     
-    <a href="{{ route('products.create') }}" class="btn btn-primary">Create Product</a>
+    <a href="{{ route('products.create') }}" class="btn btn-primary my-4">Create Product</a>
 
     <table class="table table-bordered">
         <thead>
