@@ -2,28 +2,17 @@
 
 namespace App\Livewire\Products;
 
+use App\Livewire\Forms\ProductForm;
 use App\Models\Product;
 use Livewire\Component;
 
 class Create extends Component
 {
-    public $name;
-
-    public $price;
-
-    protected $rules = [
-        'name' => 'required|string|max:255',
-        'price' => 'required|numeric|min:0',
-    ];
+    public ProductForm $form;
 
     public function submit()
     {
-        $this->validate();
-
-        Product::create([
-            'name' => $this->name,
-            'price' => $this->price,
-        ]);
+        $this->form->store();
 
         session()->flash('message', 'Product created successfully.');
 
