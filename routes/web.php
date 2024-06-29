@@ -10,6 +10,7 @@ use App\Livewire\Products\Index as ProductIndex;
 
 use App\Livewire\Categories\Index as CategoryIndex;
 use App\Livewire\Categories\Create as CategoryCreate;
+use App\Livewire\Categories\Edit as CategoryEdit;
 
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,4 @@ Route::get('brands/edit/{id}', BrandEdit::class)->name('brands.edit');
 
 Route::get('categories', CategoryIndex::class)->name('categories.index');
 Route::get('categories/create', CategoryCreate::class)->name('categories.create');
+Route::get('categories/edit/{id}', CategoryEdit::class)->name('categories.edit');

@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{ $category->name }}</td>
                             <td>
-                                <a href="#" class="btn btn-warning">Edit</a>
+                                <a href="{{ route("categories.edit", $category->id) }}" class="btn btn-warning">Edit</a>
                                 <button class="btn btn-danger" wire:click="delete({{ $category->id }})" wire:confirm="Are you sure that you want to delete this category?">Delete</button>
                             </td>
                         </tr>
