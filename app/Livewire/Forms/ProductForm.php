@@ -13,9 +13,15 @@ class ProductForm extends Form
 
     public $price;
 
+    public $category_id;
+
+    public $brand_id;
+
     protected $rules = [
         'name' => 'required|string|max:255',
         'price' => 'required|numeric|min:0',
+        'category_id' => 'required|integer|min:1',
+        'brand_id' => 'required|integer|min:1',
     ];
 
     public function setProduct(Product $product)
@@ -29,7 +35,7 @@ class ProductForm extends Form
     {
         $this->validate();
 
-        Product::create($this->pull());
+        Product::create($this->all());
     }
 
     public function update()
