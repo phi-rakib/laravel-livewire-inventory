@@ -36,9 +36,6 @@ class ProductForm extends Form
     {
         $this->validate();
 
-        $this->product->update([
-            'name' => $this->name,
-            'price' => $this->price,
-        ]);
+        $this->product->update($this->all());
     }
 }
