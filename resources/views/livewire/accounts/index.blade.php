@@ -1,4 +1,9 @@
 <div class="container my-4">
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     <div class="row my-4">
         <div class="col-12">
             <div class="float-left">
