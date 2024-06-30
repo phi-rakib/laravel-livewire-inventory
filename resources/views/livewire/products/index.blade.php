@@ -5,7 +5,7 @@
         </div>
     @endif
     
-    <a href="{{ route('products.create') }}" class="btn btn-primary my-4">Create Product</a>
+    <x-page-header title="Product Index" uriText="Create Product" uri="{{ route('products.create') }}" />
 
     <table class="table table-bordered">
         <thead>

@@ -4,16 +4,8 @@
             {{ session('message') }}
         </div>
     @endif
-    <div class="row my-4">
-        <div class="col-12">
-            <div class="float-left">
-                <h2>Accounts Index</h2>
-            </div>
-            <div class="float-right">
-                <a href="{{ route('accounts.create') }}" class="btn btn-primary">Create</a>
-            </div>
-        </div>
-    </div>
+    
+    <x-page-header title="Accounts Index" uriText="Create" uri="{{ route('accounts.create') }}" />
 
     <div class="row my-4">
         <table class="table table-bordered">

@@ -4,17 +4,8 @@
             {{ session("message") }}
         </div>
     @endif
-    
-    <div class="row my-4">
-        <div class="col-12">
-            <div class="float-left">
-                <h2>Deposit Category Index</h2>
-            </div>
-            <div class="float-right">
-                <a href="{{ route('depositCategories.create') }}" class="btn btn-primary">Create</a>
-            </div>
-        </div>
-    </div>
+
+    <x-page-header title="Deposit Category Index" uriText="Create Deposit Category" uri="{{ route('depositCategories.create') }}" />
 
     <div class="row my-4">
         <div class="col-6">

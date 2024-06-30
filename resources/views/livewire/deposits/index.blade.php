@@ -1,14 +1,6 @@
 <div class="container my-4">
-    <div class="row my-4">
-        <div class="col-12">
-            <div class="float-left">
-                <h2>Deposit Index</h2>
-            </div>
-            <div class="float-right">
-                <a href="{{ route('deposits.create') }}" class="btn btn-primary">Create</a>
-            </div>
-        </div>
-    </div>
+    
+    <x-page-header title="Deposit Index" uriText="Create Deposit" uri="{{ route('deposits.create') }}" />
 
     <div class="row my-4">
         <div class="col-12">

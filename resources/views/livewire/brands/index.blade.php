@@ -1,14 +1,7 @@
 <div class="container my-4">
-    <div class="row my-4">
-        <div class="col-md-12">
-            <div class="float-left">
-                <h2>Brand Index</h2>
-            </div>
-            <div class="float-right">
-                <a href="{{ route('brands.create')}}" class="btn btn-primary">Create</a>
-            </div>
-        </div>
-    </div>
+
+    <x-page-header title="Brand Index" uriText="Create Brand" uri="{{ route('brands.create') }}" />
+
     <div class="row">
         <div class="col-md-6">
             <table class="table table-bordered">

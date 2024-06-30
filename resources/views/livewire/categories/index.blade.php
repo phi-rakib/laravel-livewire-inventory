@@ -5,16 +5,7 @@
         </div>    
     @endif
 
-    <div class="row my-4">
-        <div class="col-12">
-            <div class="float-left">
-                <h2>Category Index</h2>
-            </div>
-            <div class="float-right">
-                <a href="{{ route("categories.create") }}" class="btn btn-primary">Create</a>
-            </div>
-        </div>
-    </div>
+    <x-page-header title="Category Index" uriText="Create Category" uri="{{ route('categories.create') }}" />
 
     <div class="row">
         <div class="col-12">
