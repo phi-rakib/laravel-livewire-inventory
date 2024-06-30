@@ -23,6 +23,7 @@
                     <tr>
                         <th>Name</th>
                         <th>Created At</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 
@@ -31,6 +32,9 @@
                         <tr>
                             <td>{{ $depositCategory->name }}</td>
                             <td>{{ $depositCategory->created_at }}</td>
+                            <td>
+                                <a href="{{ route('depositCategories.edit', $depositCategory)}}" class="btn btn-warning">Edit</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
