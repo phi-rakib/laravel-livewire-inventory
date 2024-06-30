@@ -31,11 +31,15 @@ class AccountForm extends Form
 
     public function store()
     {
+        $this->validate();
+
         Account::create($this->all());
     }
 
     public function update()
     {
+        $this->validate();
+        
         $this->account->update($this->all());
     }
 }
