@@ -16,6 +16,7 @@ use App\Livewire\Categories\Index as CategoryIndex;
 use App\Livewire\Categories\Create as CategoryCreate;
 use App\Livewire\Categories\Edit as CategoryEdit;
 
+use App\Livewire\DepositCategories\Index as DepositCategoryIndex;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', ProductIndex::class)->name('products.index');
@@ -33,3 +34,5 @@ Route::get('categories/edit/{id}', CategoryEdit::class)->name('categories.edit')
 Route::get('accounts', AccountIndex::class)->name('accounts.index');
 Route::get('accounts/create', AccountCreate::class)->name('accounts.create');
 Route::get('accounts/edit/{id}', AccountEdit::class)->name('accounts.edit');
+
+Route::get('depositCategories', DepositCategoryIndex::class)->name('depositCategories.index');
