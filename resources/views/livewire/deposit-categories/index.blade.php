@@ -1,7 +1,7 @@
 <div class="container my-4">
     @if (session()->has("message"))
         <div class="alert alert-success">
-            {{ $message }}
+            {{ session("message") }}
         </div>
     @endif
     
@@ -11,7 +11,7 @@
                 <h2>Deposit Category Index</h2>
             </div>
             <div class="float-right">
-                <a href="#" class="btn btn-primary">Create</a>
+                <a href="{{ route('depositCategories.create') }}" class="btn btn-primary">Create</a>
             </div>
         </div>
     </div>
