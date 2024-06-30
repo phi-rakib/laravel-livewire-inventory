@@ -34,6 +34,9 @@
                             <td>{{ $depositCategory->created_at }}</td>
                             <td>
                                 <a href="{{ route('depositCategories.edit', $depositCategory)}}" class="btn btn-warning">Edit</a>
+                                <button class="btn btn-danger" 
+                                wire:confirm="Are you sure that you want to delete this deposit category?"
+                                wire:click="delete({{ $depositCategory->id }})">Delete</button>
                             </td>
                         </tr>
                     @endforeach

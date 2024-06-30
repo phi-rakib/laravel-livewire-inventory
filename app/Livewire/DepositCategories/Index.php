@@ -11,7 +11,19 @@ class Index extends Component
 
     public function mount()
     {
-        $this->depositCategories = DepositCategory::latest()->get();
+        $this->depositCategories = $this->getAllDepositCategories();
+    }
+
+    public function delete(DepositCategory $depositcategory)
+    {
+        $depositcategory->delete();
+
+        $this->depositCategories = $this->getAllDepositCategories();
+    }
+
+    private function getAllDepositCategories()
+    {
+        return DepositCategory::latest()->get();
     }
 
     public function render()
