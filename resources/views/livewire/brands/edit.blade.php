@@ -1,15 +1,7 @@
 <div class="container my-4">
-    <div class="row my-4">
-        <div class="col-12">
-            <div class="float-left">
-                <h2>Brand Edit</h2>
-            </div>
+    
+    <x-page-header title="Brand Edit" uriText="Back" uri="{{ route('brands.index') }}" />
 
-            <div class="float-right">
-                <a href="{{ route("brands.index") }}">Back</a>
-            </div>
-        </div>
-    </div>
     <div class="row">
         <div class="col-6">
             <form wire:submit.prevent="submit">

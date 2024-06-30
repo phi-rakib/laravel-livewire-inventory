@@ -1,14 +1,7 @@
 <div class="container my-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="float-left">
-                <h2>Product Create</h2>
-            </div>
-            <div class="float-right">
-                <a href="{{ route('products.index') }}" class="btn btn-primary">Back</a>
-            </div>
-        </div>
-    </div>
+
+    <x-page-header title="Product Create" uriText="Back" uri="{{ route('products.index') }}" />
+    
     <div class="row">
         <div class="col-md-6">
             <form wire:submit.prevent="submit">

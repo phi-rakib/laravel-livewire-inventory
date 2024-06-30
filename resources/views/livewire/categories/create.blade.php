@@ -1,14 +1,6 @@
 <div class="container my-4">
-    <div class="row my-4">
-        <div class="col-12">
-            <div class="float-left">
-                <h2>Category Create</h2>
-            </div>
-            <div class="float-right">
-                <a href="{{ route('categories.index') }}" class="btn btn-primary">Back</a>
-            </div>
-        </div>
-    </div>
+
+    <x-page-header title="Category Create" uriText="Back" uri="{{ route('categories.index') }}" />
 
     <div class="row my-4">
         <div class="col-6">

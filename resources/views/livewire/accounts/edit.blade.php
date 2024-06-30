@@ -1,14 +1,5 @@
 <div class="container my-4">
-    <div class="row my-4">
-        <div class="col-12">
-            <div class="float-left">
-                <h2>Account Edit</h2>
-            </div>
-            <div class="float-right">
-                <a href="{{ route('accounts.index') }}" class="btn btn-primary">Back</a>
-            </div>
-        </div>
-    </div>
+    <x-page-header title="Account Edit" uriText="Back" uri="{{ route('accounts.index') }}" />
 
     <div class="row my-4">
         <div class="col-6">

@@ -1,14 +1,6 @@
 <div class="container my-4">
-    <div class="row my-4">
-        <div class="col-12">
-            <div class="float-left">
-                <h2>Edit Deposit Category</h2>
-            </div>
-            <div class="float-right">
-                <a href="route('depositCategories.index')" class="btn btn-primary">Back</a>
-            </div>
-        </div>
-    </div>
+    
+    <x-page-header title="Deposit Category Edit" uriText="Back" uri="{{ route('depositCategories.index') }}" />
 
     <div class="row my-4">
         <div class="col-6">
