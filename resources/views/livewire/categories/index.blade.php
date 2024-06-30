@@ -1,9 +1,5 @@
 <div class="container my-4">
-    @if (session()->has("message"))
-        <div class="alert alert-success">
-            {{ session("message") }}
-        </div>    
-    @endif
+    <x-session-message />
 
     <x-page-header title="Category Index" uriText="Create Category" uri="{{ route('categories.create') }}" />
 

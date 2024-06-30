@@ -1,10 +1,6 @@
 <div class="container my-4">
-    @if (session()->has('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
-    
+    <x-session-message />
+
     <x-page-header title="Accounts Index" uriText="Create" uri="{{ route('accounts.create') }}" />
 
     <div class="row my-4">

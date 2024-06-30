@@ -1,4 +1,6 @@
 <div class="container my-4">
+
+    <x-session-message />
     
     <x-page-header title="Deposit Index" uriText="Create Deposit" uri="{{ route('deposits.create') }}" />
 

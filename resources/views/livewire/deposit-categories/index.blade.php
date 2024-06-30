@@ -1,9 +1,5 @@
 <div class="container my-4">
-    @if (session()->has("message"))
-        <div class="alert alert-success">
-            {{ session("message") }}
-        </div>
-    @endif
+    <x-session-message />
 
     <x-page-header title="Deposit Category Index" uriText="Create Deposit Category" uri="{{ route('depositCategories.create') }}" />
 

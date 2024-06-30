@@ -1,5 +1,7 @@
 <div class="container my-4">
 
+    <x-session-message />
+    
     <x-page-header title="Brand Index" uriText="Create Brand" uri="{{ route('brands.create') }}" />
 
     <div class="row">
