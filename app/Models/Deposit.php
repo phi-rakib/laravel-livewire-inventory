@@ -14,6 +14,8 @@ class Deposit extends Model
         'deposit_date',
         'amount',
         'note',
+        'account_id',
+        'deposit_category_id',
     ];
 
     public function account(): BelongsTo
