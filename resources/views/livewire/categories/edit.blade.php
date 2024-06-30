@@ -5,10 +5,7 @@
     <div class="row my-4">
         <div class="col-6">
             <form wire:submit.prevent="submit">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" class="form-control" wire:model="form.name">
-                </div>
+                <x-input-text name="form.name" label="Name" />
 
                 <button class="btn btn-success">Update</button>
             </form>

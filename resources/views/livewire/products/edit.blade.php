@@ -5,45 +5,13 @@
     <div class="row">
         <div class="col-md-6">
             <form wire:submit.prevent="submit">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" class="form-control" wire:model="form.name">
-                    @error('form.name')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
+                <x-input-text name="form.name" label="Name" />
+
+                <x-input-number name="form.price" label="Price" />
         
-                <div class="form-group">
-                    <label for="price"">Price</label>
-                    <input type="text" id="price" class="form-control" wire:model="form.price">
-                    @error('form.price')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-                
-                <div class="form-group">
-                    <label for="category">Category</label>
-                    <select id="category_id" class="form-control" wire:model="form.category_id">
-                        @foreach ($categories as $id => $name)
-                            <option value="{{ $id }}">{{ $name }}</option>
-                        @endforeach
-                    </select>
-                    @error('form.category_id')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-                
-                <div class="form-group">
-                    <label for="brand">Brand</label>
-                    <select id="brand_id" class="form-control" wire:model="form.brand_id">
-                        @foreach ($brands as $id => $name)
-                            <option value="{{ $id }}">{{ $name }}</option>
-                        @endforeach
-                    </select>
-                    @error('form.brand_id')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
+                <x-select name="form.category_id" label="Category" :list="$categories" />
+
+                <x-select name="form.brand_id" label="Brand" :list="$brands" />
         
                 <button type="submit" class="btn btn-success">Update</button>
             </form>

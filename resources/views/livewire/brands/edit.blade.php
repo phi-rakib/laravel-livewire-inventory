@@ -5,13 +5,9 @@
     <div class="row">
         <div class="col-6">
             <form wire:submit.prevent="submit">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" class="form-control" wire:model="form.name">
-                    @error('form.name')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
+                
+                <x-input-text name="form.name" label="Name" />
+
                 <button type="submit" class="btn btn-success">Update</button>
             </form>
         </div>
