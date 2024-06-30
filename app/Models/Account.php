@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Account extends Model
 {
@@ -14,4 +15,9 @@ class Account extends Model
         'account_number',
         'balance',
     ];
+
+    public function deposits(): HasMany
+    {
+        return $this->hasMany(Deposit::class);
+    }
 }
