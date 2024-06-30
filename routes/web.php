@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Accounts\Index as AccountIndex;
 use App\Livewire\Brands\Index as BrandIndex;
 use App\Livewire\Brands\Create as BrandCreate;
 use App\Livewire\Brands\Edit as BrandEdit;
@@ -25,3 +26,5 @@ Route::get('brands/edit/{id}', BrandEdit::class)->name('brands.edit');
 Route::get('categories', CategoryIndex::class)->name('categories.index');
 Route::get('categories/create', CategoryCreate::class)->name('categories.create');
 Route::get('categories/edit/{id}', CategoryEdit::class)->name('categories.edit');
+
+Route::get('accounts', AccountIndex::class)->name('accounts.index');
