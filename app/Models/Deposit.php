@@ -11,7 +11,7 @@ class Deposit extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'deposit_date',
         'amount',
         'note',
     ];
