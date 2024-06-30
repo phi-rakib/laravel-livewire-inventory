@@ -11,7 +11,7 @@ class Index extends Component
 
     public function mount()
     {
-        $this->deposits = Deposit::latest()->with(['account', 'depositCategory'])->get();
+        $this->deposits = Deposit::latest()->with(['account:id,name', 'depositCategory:id,name'])->get();
 
         return $this->deposits;
     }
