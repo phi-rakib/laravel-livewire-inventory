@@ -5,7 +5,7 @@
                 <h2>Deposit Index</h2>
             </div>
             <div class="float-right">
-                <a href="#" class="btn btn-primary">Create</a>
+                <a href="{{ route('deposits.create') }}" class="btn btn-primary">Create</a>
             </div>
         </div>
     </div>
