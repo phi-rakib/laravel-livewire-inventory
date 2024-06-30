@@ -35,6 +35,9 @@
                         <td>{{ $account->created_at }}</td>
                         <td>
                             <a href="{{ route('accounts.edit', $account->id) }}" class="btn btn-warning">Edit</a>
+                            <button class="btn btn-danger" 
+                            wire:confirm="Are you sure that you want to delete this account?"
+                            wire:click="delete({{ $account->id }})">Delete</button>
                         </td>
                     </tr>
                 @endforeach    

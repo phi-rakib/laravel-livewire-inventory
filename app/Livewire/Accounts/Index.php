@@ -11,7 +11,19 @@ class Index extends Component
 
     public function mount()
     {
-        $this->accounts = Account::latest()->get();
+        $this->accounts = $this->getAllAccounts();
+    }
+
+    public function delete(int $id)
+    {
+        Account::findOrFail($id)->delete();
+
+        $this->accounts = $this->getAllAccounts();
+    }
+
+    private function getAllAccounts()
+    {
+        return Account::latest()->get();
     }
 
     public function render()
