@@ -7,6 +7,8 @@ use Livewire\Form;
 
 class AccountForm extends Form
 {
+    public ?Account $account;
+
     public $name;
 
     public $account_number;
@@ -19,8 +21,21 @@ class AccountForm extends Form
         'balance' => 'required|numerice|min:0',
     ];
 
+    public function setAccount(Account $account)
+    {
+        $this->account = $account;
+        $this->name = $account->name;
+        $this->account_number = $account->account_number;
+        $this->balance = $account->balance;
+    }
+
     public function store()
     {
         Account::create($this->all());
+    }
+
+    public function update()
+    {
+        $this->account->update($this->all());
     }
 }

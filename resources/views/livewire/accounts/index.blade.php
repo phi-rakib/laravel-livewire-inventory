@@ -23,6 +23,7 @@
                     <th>Account Number</th>
                     <th>Balance</th>
                     <th>Created At</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +33,9 @@
                         <td>{{ $account->account_number }}</td>
                         <td>{{ $account->balance }}</td>
                         <td>{{ $account->created_at }}</td>
+                        <td>
+                            <a href="{{ route('accounts.edit', $account->id) }}" class="btn btn-warning">Edit</a>
+                        </td>
                     </tr>
                 @endforeach    
             </tbody>   
