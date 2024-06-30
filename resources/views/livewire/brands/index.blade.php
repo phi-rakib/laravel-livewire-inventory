@@ -6,25 +6,12 @@
 
     <div class="row">
         <div class="col-md-6">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($brands as $brand)
-                        <tr>
-                            <td>{{ $brand->name }}</td>
-                            <td>
-                                <a href="{{ route("brands.edit", $brand->id)}}" class="btn btn-warning">Edit</a>
-                                <button class="btn btn-danger" wire:click="delete({{ $brand->id }})" wire:confirm="Are you sure that you want to delete this brand?">Delete</button>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            @php
+                $headers = ['Name'];
+                $properties = ['name'];
+            @endphp
+            
+            <x-table :headers="$headers" :properties="$properties" :list="$brands" editRouteName="brands.edit"/>
         </div>
     </div>
 </div>

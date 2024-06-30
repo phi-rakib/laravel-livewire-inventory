@@ -5,25 +5,12 @@
 
     <div class="row">
         <div class="col-12">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($categories as $category)
-                        <tr>
-                            <td>{{ $category->name }}</td>
-                            <td>
-                                <a href="{{ route("categories.edit", $category->id) }}" class="btn btn-warning">Edit</a>
-                                <button class="btn btn-danger" wire:click="delete({{ $category->id }})" wire:confirm="Are you sure that you want to delete this category?">Delete</button>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            @php
+                $headers = ['Name'];
+                $properties = ['name'];
+            @endphp
+            
+            <x-table :headers="$headers" :properties="$properties" :list="$categories" editRouteName="categories.edit"/>
         </div>
     </div>
 </div>

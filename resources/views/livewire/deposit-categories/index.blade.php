@@ -5,30 +5,12 @@
 
     <div class="row my-4">
         <div class="col-6">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Created At</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                
-                <tbody>
-                    @foreach ($depositCategories as $depositCategory)
-                        <tr>
-                            <td>{{ $depositCategory->name }}</td>
-                            <td>{{ $depositCategory->created_at }}</td>
-                            <td>
-                                <a href="{{ route('depositCategories.edit', $depositCategory)}}" class="btn btn-warning">Edit</a>
-                                <button class="btn btn-danger" 
-                                wire:confirm="Are you sure that you want to delete this deposit category?"
-                                wire:click="delete({{ $depositCategory->id }})">Delete</button>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            @php
+                $headers = ['Name', 'Created At'];
+                $properties = ['name', 'created_at'];
+            @endphp
+            
+            <x-table :headers="$headers" :properties="$properties" :list="$depositCategories" editRouteName="depositCategories.edit"/>
         </div>
     </div>
 </div>
