@@ -24,7 +24,9 @@
                             <td>{{ $deposit->account->name }}</td>
                             <td>{{ $deposit->depositCategory->name }}</td>
                             <td>{{ $deposit->amount }}</td>
-                            <td></td>
+                            <td>
+                                <a href="{{ route('deposits.edit', $deposit->id) }}" class="btn btn-warning">Edit</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
