@@ -8,5 +8,5 @@
         $properties = ['name', 'created_at'];
     @endphp
 
-    <x-table :headers="$headers" :properties="$properties" :list="$paymentMethods" editRouteName=""/>
+    <x-table :headers="$headers" :properties="$properties" :list="$paymentMethods" editRouteName="paymentMethods.edit"/>
 </div>
