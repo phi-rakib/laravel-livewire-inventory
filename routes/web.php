@@ -25,6 +25,7 @@ use App\Livewire\Deposits\Create as DepositCreate;
 use App\Livewire\Deposits\Edit as DepositEdit;
 
 use App\Livewire\PaymentMethods\Index as PaymentMethodIndex;
+use App\Livewire\PaymentMethods\Create as PaymentMethodCreate;
 
 use Illuminate\Support\Facades\Route;
 
@@ -53,3 +54,4 @@ Route::get('deposits/create', DepositCreate::class)->name('deposits.create');
 Route::get('deposits/edit/{deposit}', DepositEdit::class)->name('deposits.edit');
 
 Route::get('paymentMethods', PaymentMethodIndex::class)->name('paymentMethods.index');
+Route::get('paymentMethods/create', PaymentMethodCreate::class)->name('paymentMethods.create');

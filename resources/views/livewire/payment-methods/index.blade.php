@@ -1,7 +1,7 @@
 <div class="container my-4">
     <x-session-message />
 
-    <x-page-header title="Payment Method Index" uriText="Create Payment Method" uri="#" />
+    <x-page-header title="Payment Method Index" uriText="Create Payment Method" uri="{{ route('paymentMethods.create') }}" />
 
     @php
         $headers = ['Name', 'Created At'];
