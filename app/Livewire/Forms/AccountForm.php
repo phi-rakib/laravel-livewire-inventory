@@ -18,7 +18,7 @@ class AccountForm extends Form
     protected $rules = [
         'name' => 'required|string|max:255',
         'account_number' => 'required|string|max:255',
-        'balance' => 'required|numerice|min:0',
+        'balance' => 'required|numeric|min:0',
     ];
 
     public function setAccount(Account $account)
