@@ -17,10 +17,12 @@
                 <td>{{ $item->$property }}</td>
               @endforeach
               <td>
-                  <a href="{{ route($editRouteName, $item->id) }}" class="btn btn-warning">Edit</a>
-                  <button class="btn btn-danger" 
-                  wire:confirm="Are you sure that you want to delete it?"
-                  wire:click="delete({{ $item->id }})">Delete</button>
+                @if (!empty($editRouteName))
+                  <a href="{{ route($editRouteName, $item->id) }}" class="btn btn-warning">Edit</a>  
+                @endif
+                <button class="btn btn-danger" 
+                wire:confirm="Are you sure that you want to delete it?"
+                wire:click="delete({{ $item->id }})">Delete</button>
               </td>
           </tr>
       @endforeach    
