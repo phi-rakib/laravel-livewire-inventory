@@ -27,6 +27,7 @@
                             <td>{{ $expense->paymentMethod->name }}</td>
                             <td>
                                 <a href="{{route('expenses.edit', $expense->id)}}" class="btn btn-warning">Edit</a>
+                                <button class="btn btn-danger" wire:click="delete({{ $expense }})">Delete</button>
                             </td>
                         </tr>
                     @endforeach
