@@ -1,7 +1,7 @@
 <div class="container my-4">
     <x-session-message />
 
-    <x-page-header title="Expense Index" uriText="Create Expense" uri="" />
+    <x-page-header title="Expense Index" uriText="Create Expense" uri="{{ route('expenses.create') }}" />
 
     <div class="row">
         <div class="col-12">
