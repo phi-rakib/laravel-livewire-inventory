@@ -7,5 +7,5 @@
         $headers = ['Name', 'Created At'];
         $properties = ['name', 'created_at'];
     @endphp
-    <x-table :headers="$headers" :properties="$properties" :list="$expenseCategories" editRouteName="" />
+    <x-table :headers="$headers" :properties="$properties" :list="$expenseCategories" editRouteName="expenseCategories.edit" />
 </div>
