@@ -30,6 +30,7 @@ use App\Livewire\ExpenseCategories\Edit as ExpenseCategoryEdit;
 
 use App\Livewire\Expenses\Index as ExpenseIndex;
 use App\Livewire\Expenses\Create as ExpenseCreate;
+use App\Livewire\Expenses\Edit as ExpenseEdit;
 
 use App\Livewire\PaymentMethods\Index as PaymentMethodIndex;
 use App\Livewire\PaymentMethods\Create as PaymentMethodCreate;
@@ -71,3 +72,4 @@ Route::get('expenseCategories/edit/{expenseCategory}', ExpenseCategoryEdit::clas
 
 Route::get('expenses', ExpenseIndex::class)->name('expenses.index');
 Route::get('expenses/create', ExpenseCreate::class)->name('expenses.create');
+Route::get('expenses/edit/{expense}', ExpenseEdit::class)->name('expenses.edit');
