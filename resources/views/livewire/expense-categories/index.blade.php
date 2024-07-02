@@ -1,5 +1,5 @@
 <div class="container my-4">
-    <x-page-header title="Expense Category Index" uriText="Create Expense Category" uri=""/>
+    <x-page-header title="Expense Category Index" uriText="Create Expense Category" uri="{{ route('expenseCategories.create')}}"/>
 
     <x-session-message />
 

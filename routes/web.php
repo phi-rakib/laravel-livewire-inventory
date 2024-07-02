@@ -25,6 +25,7 @@ use App\Livewire\Deposits\Create as DepositCreate;
 use App\Livewire\Deposits\Edit as DepositEdit;
 
 use App\Livewire\ExpenseCategories\Index as ExpenseCategoryIndex;
+use App\Livewire\ExpenseCategories\Create as ExpenseCategoryCreate;
 
 use App\Livewire\PaymentMethods\Index as PaymentMethodIndex;
 use App\Livewire\PaymentMethods\Create as PaymentMethodCreate;
@@ -60,3 +61,4 @@ Route::get('paymentMethods/create', PaymentMethodCreate::class)->name('paymentMe
 Route::get('paymentMethods/edit/{paymentMethod}', PaymentMethodEdit::class)->name('paymentMethods.edit');
 
 Route::get('expenseCategories', ExpenseCategoryIndex::class)->name('expenseCategories.index');
+Route::get('expenseCategories/create', ExpenseCategoryCreate::class)->name('expenseCategories.create');
