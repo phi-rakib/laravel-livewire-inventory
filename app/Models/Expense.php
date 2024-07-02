@@ -14,6 +14,9 @@ class Expense extends Model
         'expense_date',
         'amount',
         'note',
+        'account_id',
+        'expense_category_id',
+        'payment_method_id',
     ];
 
     public function expenseCategory(): BelongsTo
