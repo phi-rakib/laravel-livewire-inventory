@@ -13,7 +13,7 @@ class Index extends Component
     {
         $this->expenseCategories = ExpenseCategory::latest()->get();
     }
-    
+
     public function render()
     {
         return view('livewire.expense-categories.index');

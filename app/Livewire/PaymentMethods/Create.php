@@ -11,8 +11,8 @@ class Create extends Component
 
     public function save()
     {
-        $this->form->store();   
-        
+        $this->form->store();
+
         session()->flash('message', 'Payment Method created');
 
         return to_route('paymentMethods.index');

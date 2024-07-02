@@ -11,7 +11,7 @@ class PaymentMethod extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name'
+        'name',
     ];
 
     public function expenses(): HasMany

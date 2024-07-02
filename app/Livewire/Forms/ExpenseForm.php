@@ -13,10 +13,15 @@ class ExpenseForm extends Form
     public ?Expense $expense;
 
     public $expense_date;
+
     public $expense_category_id;
+
     public $account_id;
+
     public $payment_method_id;
+
     public $amount;
+
     public $note;
 
     protected $rules = [
@@ -41,12 +46,13 @@ class ExpenseForm extends Form
 
         $account = Account::findOrFail($this->account_id);
 
-        if($account->balance < $this->amount)
-            throw new Exception("Insufficient balance");
+        if ($account->balance < $this->amount) {
+            throw new Exception('Insufficient balance');
+        }
 
         $payload = $this->all();
 
-        DB::transaction(function () use($account, $payload){
+        DB::transaction(function () use ($account, $payload) {
             $account->decrement('balance', $payload['amount']);
 
             $account->expenses()->create($this->all());
@@ -56,28 +62,28 @@ class ExpenseForm extends Form
     public function update()
     {
         $this->validate();
-        
+
         $payload = $this->all();
         $expense = $this->expense;
 
-        DB::transaction(function() use($expense, $payload) {
-            if($expense->account_id !== $payload['account_id'])
-            {
+        DB::transaction(function () use ($expense, $payload) {
+            if ($expense->account_id !== $payload['account_id']) {
                 $account = Account::findOrFail($expense->account_id);
                 $account->increment($expense->amount);
             }
-            
+
             $account = Account::findOrFail($payload['account_id']);
-            
+
             $newBalance = $account->balance + $expense->amount - $payload['amount'];
 
-            if($newBalance < 0)
-                throw new Exception('Insufficient balance');    
+            if ($newBalance < 0) {
+                throw new Exception('Insufficient balance');
+            }
 
             $account->update([
                 'balance' => $newBalance,
             ]);
-            
+
             $this->expense->update($this->all());
         });
     }

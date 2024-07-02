@@ -39,7 +39,7 @@ class AccountForm extends Form
     public function update()
     {
         $this->validate();
-        
+
         $this->account->update($this->all());
     }
 }

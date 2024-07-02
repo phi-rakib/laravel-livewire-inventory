@@ -14,13 +14,13 @@ class Edit extends Component
     {
         $this->form->setCategory(Category::findOrFail($id));
     }
-    
+
     public function submit()
     {
         $this->form->update();
-        
+
         session()->flash('message', 'Category updated successfully');
-        
+
         return to_route('categories.index');
     }
 

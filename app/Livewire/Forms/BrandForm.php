@@ -16,7 +16,7 @@ class BrandForm extends Form
     ];
 
     public function setBrand(Brand $brand): void
-    {   
+    {
         $this->brand = $brand;
         $this->name = $brand->name;
     }
@@ -24,7 +24,7 @@ class BrandForm extends Form
     public function store(): void
     {
         $this->validate();
-        
+
         Brand::create($this->all());
     }
 

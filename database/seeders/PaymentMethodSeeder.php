@@ -12,6 +12,6 @@ class PaymentMethodSeeder extends Seeder
      */
     public function run(): void
     {
-        PaymentMethod::factory(10)->create();        
+        PaymentMethod::factory(10)->create();
     }
 }

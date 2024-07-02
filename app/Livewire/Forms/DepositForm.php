@@ -12,9 +12,13 @@ class DepositForm extends Form
     public ?Deposit $deposit;
 
     public $deposit_date;
+
     public $amount;
+
     public $note;
+
     public $account_id;
+
     public $deposit_category_id;
 
     protected $rules = [
@@ -28,7 +32,7 @@ class DepositForm extends Form
     public function setUpDeposit(Deposit $deposit)
     {
         $this->deposit = $deposit;
-        
+
         $this->fill($deposit);
     }
 
@@ -38,7 +42,7 @@ class DepositForm extends Form
 
         $payload = $this->all();
 
-        DB::transaction(function () use($payload) {
+        DB::transaction(function () use ($payload) {
             $deposit = Deposit::create($payload);
 
             $deposit->account()->increment('balance', $deposit->amount);
@@ -48,14 +52,15 @@ class DepositForm extends Form
     public function update()
     {
         $previousDepositedAmount = Deposit::where('id', $this->deposit->id)->value('amount');
-        
+
         $accountBalance = $this->deposit->account->balance;
 
         $balance = $accountBalance - $previousDepositedAmount + $this->amount;
 
-        if($balance < 0)
-            throw new Exception("Sorry, could not update because of insufficient balance");
-            
+        if ($balance < 0) {
+            throw new Exception('Sorry, could not update because of insufficient balance');
+        }
+
         $this->deposit->account()->update([
             'balance' => $balance,
         ]);

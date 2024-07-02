@@ -24,10 +24,12 @@ class Edit extends Component
             $this->form->update();
         } catch (Exception $ex) {
             session()->flash('message', $ex->getMessage());
-            return; 
+
+            return;
         }
 
         session()->flash('message', 'Deposit updated successfully');
+
         return to_route('deposits.index');
     }
 
@@ -35,7 +37,7 @@ class Edit extends Component
     {
         $accounts = Account::pluck('name', 'id');
         $depositCategories = DepositCategory::pluck('name', 'id');
-        
+
         return view('livewire.deposits.edit', compact('accounts', 'depositCategories'));
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Livewire\DepositCategories;
 
-use App\Livewire\Forms\DepositCategoryForm;;
+use App\Livewire\Forms\DepositCategoryForm;
 use Livewire\Component;
 
 class Create extends Component

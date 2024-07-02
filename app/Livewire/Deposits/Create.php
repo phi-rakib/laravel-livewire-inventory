@@ -19,7 +19,7 @@ class Create extends Component
 
         return to_route('deposits.index');
     }
-    
+
     public function render()
     {
         $depositCategories = DepositCategory::pluck('name', 'id');

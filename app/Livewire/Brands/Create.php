@@ -12,7 +12,7 @@ class Create extends Component
     public function submit()
     {
         $this->form->store();
-        
+
         session()->flash('message', 'Brand created successfully');
 
         return to_route('brands.index');

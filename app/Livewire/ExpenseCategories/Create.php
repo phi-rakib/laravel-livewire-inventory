@@ -12,7 +12,7 @@ class Create extends Component
     public function save()
     {
         $this->form->store();
-        
+
         session()->flash('message', 'Expense Category created successfully');
 
         return to_route('expenseCategories.index');

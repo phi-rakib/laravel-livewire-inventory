@@ -1,41 +1,32 @@
 <?php
 
-use App\Livewire\Accounts\Index as AccountIndex;
 use App\Livewire\Accounts\Create as AccountCreate;
 use App\Livewire\Accounts\Edit as AccountEdit;
-
-use App\Livewire\Brands\Index as BrandIndex;
+use App\Livewire\Accounts\Index as AccountIndex;
 use App\Livewire\Brands\Create as BrandCreate;
 use App\Livewire\Brands\Edit as BrandEdit;
-
+use App\Livewire\Brands\Index as BrandIndex;
+use App\Livewire\Categories\Create as CategoryCreate;
+use App\Livewire\Categories\Edit as CategoryEdit;
+use App\Livewire\Categories\Index as CategoryIndex;
+use App\Livewire\DepositCategories\Create as DepositCategoryCreate;
+use App\Livewire\DepositCategories\Edit as DepositCategoryEdit;
+use App\Livewire\DepositCategories\Index as DepositCategoryIndex;
+use App\Livewire\Deposits\Create as DepositCreate;
+use App\Livewire\Deposits\Edit as DepositEdit;
+use App\Livewire\Deposits\Index as DepositIndex;
+use App\Livewire\ExpenseCategories\Create as ExpenseCategoryCreate;
+use App\Livewire\ExpenseCategories\Edit as ExpenseCategoryEdit;
+use App\Livewire\ExpenseCategories\Index as ExpenseCategoryIndex;
+use App\Livewire\Expenses\Create as ExpenseCreate;
+use App\Livewire\Expenses\Edit as ExpenseEdit;
+use App\Livewire\Expenses\Index as ExpenseIndex;
+use App\Livewire\PaymentMethods\Create as PaymentMethodCreate;
+use App\Livewire\PaymentMethods\Edit as PaymentMethodEdit;
+use App\Livewire\PaymentMethods\Index as PaymentMethodIndex;
 use App\Livewire\Products\Create as ProductCreate;
 use App\Livewire\Products\Edit as ProductEdit;
 use App\Livewire\Products\Index as ProductIndex;
-
-use App\Livewire\Categories\Index as CategoryIndex;
-use App\Livewire\Categories\Create as CategoryCreate;
-use App\Livewire\Categories\Edit as CategoryEdit;
-
-use App\Livewire\DepositCategories\Index as DepositCategoryIndex;
-use App\Livewire\DepositCategories\Create as DepositCategoryCreate;
-use App\Livewire\DepositCategories\Edit as DepositCategoryEdit;
-
-use App\Livewire\Deposits\Index as DepositIndex;
-use App\Livewire\Deposits\Create as DepositCreate;
-use App\Livewire\Deposits\Edit as DepositEdit;
-
-use App\Livewire\ExpenseCategories\Index as ExpenseCategoryIndex;
-use App\Livewire\ExpenseCategories\Create as ExpenseCategoryCreate;
-use App\Livewire\ExpenseCategories\Edit as ExpenseCategoryEdit;
-
-use App\Livewire\Expenses\Index as ExpenseIndex;
-use App\Livewire\Expenses\Create as ExpenseCreate;
-use App\Livewire\Expenses\Edit as ExpenseEdit;
-
-use App\Livewire\PaymentMethods\Index as PaymentMethodIndex;
-use App\Livewire\PaymentMethods\Create as PaymentMethodCreate;
-use App\Livewire\PaymentMethods\Edit as PaymentMethodEdit;
-
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', ProductIndex::class)->name('products.index');

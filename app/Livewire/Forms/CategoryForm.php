@@ -32,6 +32,6 @@ class CategoryForm extends Form
     {
         $this->validate();
 
-        $this->category->update($this->only(['name']));    
+        $this->category->update($this->only(['name']));
     }
 }

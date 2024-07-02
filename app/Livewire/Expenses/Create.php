@@ -19,6 +19,7 @@ class Create extends Component
             $this->form->store();
         } catch (Exception $ex) {
             session()->flash('message', $ex->getMessage());
+
             return;
         }
 
@@ -26,7 +27,7 @@ class Create extends Component
 
         return to_route('expenses.index');
     }
-    
+
     public function render()
     {
         $accounts = Account::pluck('name', 'id');

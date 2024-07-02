@@ -25,6 +25,7 @@ class Edit extends Component
             $this->form->update();
         } catch (Exception $ex) {
             session()->flash('message', $ex->getMessage());
+
             return;
         }
 
@@ -38,7 +39,7 @@ class Edit extends Component
         $accounts = Account::pluck('name', 'id');
         $expenseCategories = ExpenseCategory::pluck('name', 'id');
         $paymentMethods = PaymentMethod::pluck('name', 'id');
-        
+
         return view('livewire.expenses.edit', compact('accounts', 'expenseCategories', 'paymentMethods'));
     }
 }
