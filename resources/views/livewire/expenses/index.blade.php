@@ -25,7 +25,9 @@
                             <td>{{ $expense->account->name }}</td>
                             <td>{{ $expense->amount }}</td>
                             <td>{{ $expense->paymentMethod->name }}</td>
-                            <td></td>
+                            <td>
+                                <a href="{{route('expenses.edit', $expense->id)}}" class="btn btn-warning">Edit</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
