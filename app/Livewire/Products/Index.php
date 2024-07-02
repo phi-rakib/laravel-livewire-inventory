@@ -11,7 +11,7 @@ class Index extends Component
 
     public function mount()
     {
-        $this->products = Product::all();
+        $this->products = Product::latest()->with(['category:id,name', 'brand:id,name'])->get();
     }
 
     public function render()

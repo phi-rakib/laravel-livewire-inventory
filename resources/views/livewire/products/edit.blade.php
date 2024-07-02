@@ -1,21 +1,20 @@
-<div>
-    <form wire:submit.prevent="submit">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" class="form-control" wire:model="name">
-            @error('name')
-                <span class="text-danger">{{ $message }}</span>
-            @enderror
-        </div>
+<div class="container my-4">
+    
+    <x-page-header title="Product Edit" uriText="Back" uri="{{ route('products.index') }}" />
+    
+    <div class="row">
+        <div class="col-md-6">
+            <form wire:submit.prevent="submit">
+                <x-input-text name="form.name" label="Name" />
 
-        <div class="form-group">
-            <label for="price"">Price</label>
-            <input type="text" id="price" class="form-control" wire:model="price">
-            @error('price')
-                <span class="text-danger">{{ $message }}</span>
-            @enderror
-        </div>
+                <x-input-number name="form.price" label="Price" />
+        
+                <x-select name="form.category_id" label="Category" :list="$categories" />
 
-        <button type="submit" class="btn btn-success">Update</button>
-    </form>
+                <x-select name="form.brand_id" label="Brand" :list="$brands" />
+        
+                <button type="submit" class="btn btn-success">Update</button>
+            </form>
+        </div>
+    </div>
 </div>
