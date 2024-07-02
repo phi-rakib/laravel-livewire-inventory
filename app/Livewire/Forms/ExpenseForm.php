@@ -16,8 +16,19 @@ class ExpenseForm extends Form
     public $amount;
     public $note;
 
+    protected $rules = [
+        'expense_date' => 'required|date',
+        'amount' => 'required|numeric|min:1',
+        'note' => 'nullable|string|max:255',
+        'account_id' => 'required|integer',
+        'expense_category_id' => 'required|integer',
+        'payment_method_id' => 'required|integer',
+    ];
+
     public function store()
     {
+        $this->validate();
+
         $account = Account::findOrFail($this->account_id);
 
         if($account->balance < $this->amount)
