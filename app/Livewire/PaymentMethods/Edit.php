@@ -19,7 +19,7 @@ class Edit extends Component
     {
         $this->form->update();
 
-        session()->flash('message', 'Payment Method updated');
+        session()->flash('message', 'Payment Method updated successfully');
 
         return to_route('paymentMethods.index');
     }
