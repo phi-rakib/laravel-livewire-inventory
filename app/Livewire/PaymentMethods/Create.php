@@ -13,7 +13,7 @@ class Create extends Component
     {
         $this->form->store();
 
-        session()->flash('message', 'Payment Method created');
+        session()->flash('message', 'Payment Method created successfully');
 
         return to_route('paymentMethods.index');
     }
