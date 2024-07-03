@@ -28,7 +28,6 @@ class Index extends Component
 
     public function render()
     {
-        return view('livewire.accounts.index')
-            ->title('Accounts');
+        return view('livewire.accounts.index');
     }
 }
