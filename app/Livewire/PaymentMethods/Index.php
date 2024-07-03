@@ -11,7 +11,19 @@ class Index extends Component
 
     public function mount()
     {
-        $this->paymentMethods = PaymentMethod::latest()->get();
+        $this->paymentMethods = $this->getPaymentMethodList();
+    }
+
+    public function delete(PaymentMethod $paymentMethod)
+    {
+        $paymentMethod->delete();
+
+        $this->paymentMethods = $this->getPaymentMethodList();
+    }
+
+    private function getPaymentMethodList()
+    {
+        return PaymentMethod::latest()->get();
     }
 
     public function render()
