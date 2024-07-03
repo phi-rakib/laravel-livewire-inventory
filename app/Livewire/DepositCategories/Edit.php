@@ -19,7 +19,7 @@ class Edit extends Component
     {
         $this->form->update();
 
-        session()->flash('message', 'Deposit Category created successfully');
+        session()->flash('message', 'Deposit Category updated successfully');
 
         return to_route('depositCategories.index');
     }
