@@ -26,33 +26,33 @@ class DepositCategoryTest extends DuskTestCase
     {
         $depositCategory = DepositCategory::factory()->make();
 
-        $this->browse(function(Browser $browser) use($depositCategory) {
+        $this->browse(function (Browser $browser) use ($depositCategory) {
             $browser->visit(route('depositCategories.index'))
-            ->assertSee('Create Deposit Category')
-            ->clickLink('Create Deposit Category')
-            ->waitForText('Deposit Category Create')
-            ->type('#form\.name', $depositCategory->name)
-            ->press('Create')
-            ->waitForText('Deposit Category created successfully')
-            ->assertSee($depositCategory->name);
+                ->assertSee('Create Deposit Category')
+                ->clickLink('Create Deposit Category')
+                ->waitForText('Deposit Category Create')
+                ->type('#form\.name', $depositCategory->name)
+                ->press('Create')
+                ->waitForText('Deposit Category created successfully')
+                ->assertSee($depositCategory->name);
         });
     }
-    
+
     public function test_update()
     {
         $depositCategory = DepositCategory::factory()->create();
         $updatedDepositCategory = DepositCategory::factory()->make();
 
-        $this->browse(function(Browser $browser) use($depositCategory, $updatedDepositCategory) {
+        $this->browse(function (Browser $browser) use ($depositCategory, $updatedDepositCategory) {
             $browser->visit(route('depositCategories.index'))
-            ->assertSee($depositCategory->name)
-            ->clickLink('Edit')
-            ->waitForText('Deposit Category Edit')
-            ->assertInputValue('#form\.name', $depositCategory->name)
-            ->type('#form\.name', $updatedDepositCategory->name)
-            ->press('Update')
-            ->waitForText('Deposit Category updated successfully')
-            ->assertSee($updatedDepositCategory->name);
+                ->assertSee($depositCategory->name)
+                ->clickLink('Edit')
+                ->waitForText('Deposit Category Edit')
+                ->assertInputValue('#form\.name', $depositCategory->name)
+                ->type('#form\.name', $updatedDepositCategory->name)
+                ->press('Update')
+                ->waitForText('Deposit Category updated successfully')
+                ->assertSee($updatedDepositCategory->name);
         });
     }
 
@@ -60,14 +60,14 @@ class DepositCategoryTest extends DuskTestCase
     {
         $depositCategory = DepositCategory::factory()->create();
 
-        $this->browse(function(Browser $browser) use($depositCategory) {
+        $this->browse(function (Browser $browser) use ($depositCategory) {
             $browser->visit(route('depositCategories.index'))
-            ->assertSee($depositCategory->name)
-            ->press('Delete')
-            ->assertDialogOpened('Are you sure that you want to delete it?')
-            ->acceptDialog()
-            ->waitUntilMissingText($depositCategory->name)
-            ->assertDontSee($depositCategory->name);
+                ->assertSee($depositCategory->name)
+                ->press('Delete')
+                ->assertDialogOpened('Are you sure that you want to delete it?')
+                ->acceptDialog()
+                ->waitUntilMissingText($depositCategory->name)
+                ->assertDontSee($depositCategory->name);
         });
     }
 }

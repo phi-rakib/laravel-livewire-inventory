@@ -15,7 +15,7 @@ class ProductTest extends DuskTestCase
     {
         $product = Product::factory()->create();
 
-        $this->browse(function (Browser $browser) use($product) {
+        $this->browse(function (Browser $browser) use ($product) {
             $browser->visit(route('products.index'))
                 ->assertSee('Product Index')
                 ->assertSee($product->name);
@@ -26,7 +26,7 @@ class ProductTest extends DuskTestCase
     {
         $product = Product::factory()->make();
 
-        $this->browse(function (Browser $browser) use($product) {
+        $this->browse(function (Browser $browser) use ($product) {
             $browser->visit(route('products.index'))
                 ->clickLink('Create Product')
                 ->type('#form\.name', $product->name)
@@ -44,7 +44,7 @@ class ProductTest extends DuskTestCase
         $product = Product::factory()->create();
         $updatedProduct = Product::factory()->make();
 
-        $this->browse(function (Browser $browser) use($product, $updatedProduct) {
+        $this->browse(function (Browser $browser) use ($product, $updatedProduct) {
             $browser->visit(route('products.index'))
                 ->assertSee($product->name)
                 ->clickLink('Edit')

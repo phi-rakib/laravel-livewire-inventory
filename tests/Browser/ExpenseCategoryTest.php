@@ -15,10 +15,10 @@ class ExpenseCategoryTest extends DuskTestCase
     {
         $expenseCategory = ExpenseCategory::factory()->create();
 
-        $this->browse(function(Browser $browser) use($expenseCategory) {
+        $this->browse(function (Browser $browser) use ($expenseCategory) {
             $browser->visit(route('expenseCategories.index'))
-            ->assertSee('Expense Category Index')
-            ->assertSee($expenseCategory->name);
+                ->assertSee('Expense Category Index')
+                ->assertSee($expenseCategory->name);
         });
     }
 
@@ -26,15 +26,15 @@ class ExpenseCategoryTest extends DuskTestCase
     {
         $expenseCategory = ExpenseCategory::factory()->make();
 
-        $this->browse(function(Browser $browser) use($expenseCategory) {
+        $this->browse(function (Browser $browser) use ($expenseCategory) {
             $browser->visit(route('expenseCategories.index'))
-            ->assertSee('Create Expense Category')
-            ->clickLink('Create Expense Category')
-            ->waitForText('Expense Category Create')
-            ->type('#form\.name', $expenseCategory->name)
-            ->press('Create')
-            ->waitForText('Expense Category created successfully')
-            ->assertSee($expenseCategory->name);
+                ->assertSee('Create Expense Category')
+                ->clickLink('Create Expense Category')
+                ->waitForText('Expense Category Create')
+                ->type('#form\.name', $expenseCategory->name)
+                ->press('Create')
+                ->waitForText('Expense Category created successfully')
+                ->assertSee($expenseCategory->name);
         });
     }
 
@@ -43,17 +43,17 @@ class ExpenseCategoryTest extends DuskTestCase
         $expenseCategory = ExpenseCategory::factory()->create();
         $updatedExpenseCategory = ExpenseCategory::factory()->make();
 
-        $this->browse(function(Browser $browser) use($expenseCategory, $updatedExpenseCategory) {
+        $this->browse(function (Browser $browser) use ($expenseCategory, $updatedExpenseCategory) {
             $browser->visit(route('expenseCategories.index'))
-            ->assertSee('Expense Category Index')
-            ->assertSee($expenseCategory->name)
-            ->clickLink('Edit')
-            ->waitForText('Expense Category Edit')
-            ->assertInputValue('#form\.name', $expenseCategory->name)
-            ->type('#form\.name', $updatedExpenseCategory->name)
-            ->press('Update')
-            ->waitForText('Expense Category updated successfully')
-            ->assertSee($updatedExpenseCategory->name);
+                ->assertSee('Expense Category Index')
+                ->assertSee($expenseCategory->name)
+                ->clickLink('Edit')
+                ->waitForText('Expense Category Edit')
+                ->assertInputValue('#form\.name', $expenseCategory->name)
+                ->type('#form\.name', $updatedExpenseCategory->name)
+                ->press('Update')
+                ->waitForText('Expense Category updated successfully')
+                ->assertSee($updatedExpenseCategory->name);
         });
     }
 
@@ -61,15 +61,15 @@ class ExpenseCategoryTest extends DuskTestCase
     {
         $expenseCategory = ExpenseCategory::factory()->create();
 
-        $this->browse(function(Browser $browser) use($expenseCategory) {
+        $this->browse(function (Browser $browser) use ($expenseCategory) {
             $browser->visit(route('expenseCategories.index'))
-            ->assertSee('Expense Category Index')
-            ->assertSee($expenseCategory->name)
-            ->press('Delete')
-            ->assertDialogOpened('Are you sure that you want to delete it?')
-            ->acceptDialog()
-            ->waitUntilMissingText($expenseCategory->name)
-            ->assertDontSee($expenseCategory->name);
+                ->assertSee('Expense Category Index')
+                ->assertSee($expenseCategory->name)
+                ->press('Delete')
+                ->assertDialogOpened('Are you sure that you want to delete it?')
+                ->acceptDialog()
+                ->waitUntilMissingText($expenseCategory->name)
+                ->assertDontSee($expenseCategory->name);
         });
     }
 }

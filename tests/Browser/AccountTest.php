@@ -65,15 +65,14 @@ class AccountTest extends DuskTestCase
     {
         $account = Account::factory()->create();
 
-        $this->browse(function(Browser $browser) use($account) {
+        $this->browse(function (Browser $browser) use ($account) {
             $browser->visit(route('accounts.index'))
-            ->assertSee($account->name)
-            ->press('Delete')
-            ->assertDialogOpened('Are you sure that you want to delete it?')
-            ->acceptDialog()
-            ->waitUntilMissingText($account->name)
-            ->assertDontSee($account->name);
+                ->assertSee($account->name)
+                ->press('Delete')
+                ->assertDialogOpened('Are you sure that you want to delete it?')
+                ->acceptDialog()
+                ->waitUntilMissingText($account->name)
+                ->assertDontSee($account->name);
         });
     }
-
 }

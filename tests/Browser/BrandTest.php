@@ -60,14 +60,14 @@ class BrandTest extends DuskTestCase
     {
         $brand = Brand::factory()->create();
 
-        $this->browse(function(Browser $browser) use($brand) {
+        $this->browse(function (Browser $browser) use ($brand) {
             $browser->visit(route('brands.index'))
-            ->assertSee($brand->name)
-            ->press('Delete')
-            ->assertDialogOpened('Are you sure that you want to delete it?')
-            ->acceptDialog()
-            ->waitUntilMissingText($brand->name)
-            ->assertDontSee($brand->name);
+                ->assertSee($brand->name)
+                ->press('Delete')
+                ->assertDialogOpened('Are you sure that you want to delete it?')
+                ->acceptDialog()
+                ->waitUntilMissingText($brand->name)
+                ->assertDontSee($brand->name);
         });
     }
 }
