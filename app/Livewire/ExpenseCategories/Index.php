@@ -11,7 +11,19 @@ class Index extends Component
 
     public function mount()
     {
-        $this->expenseCategories = ExpenseCategory::latest()->get();
+        $this->expenseCategories = $this->getAllExpenseCategories();
+    }
+
+    public function delete(ExpenseCategory $expenseCategory)
+    {
+        $expenseCategory->delete();
+
+        $this->expenseCategories = $this->getAllExpenseCategories();
+    }
+
+    private function getAllExpenseCategories()
+    {
+        return ExpenseCategory::latest()->get();
     }
 
     public function render()
